@@ -1,6 +1,6 @@
 // index.js
 const express = require('express');
-const app = express();
+const app = express.Router();
 
 const connectDB = require('./db/db_connection')
 connectDB();
@@ -10,7 +10,7 @@ const UserModel = require('./models/user_Signup_model');
 // For encryption Password
 const bcrypt = require('bcryptjs');
 
-app.use(express.json()); // Parsing
+// app.use(express.json()); // Parsing
 
 
 // login.js

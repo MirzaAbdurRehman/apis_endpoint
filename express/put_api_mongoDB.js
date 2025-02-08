@@ -1,12 +1,12 @@
 const express = require('express')
-const app = express();
+const app = express.Router();
 
 const connectDB = require('./db/db_connection');
 connectDB();
 
 const employeeModel = require('./models/employeeModel');
 
-app.use(express.json())   // This middle_ware is used for parisng the json format into javaScript Objects 
+// app.use(express.json())   // This middle_ware is used for parisng the json format into javaScript Objects 
 
 app.put('/employee/:id', async (req,res) => {  // Use put method when update all the fields of data
     try{
@@ -35,6 +35,5 @@ app.put('/employee/:id', async (req,res) => {  // Use put method when update all
 });
 
 
-app.listen(2000, () => {
-    console.log('Server is running on Port: 2000');
-});
+// Start Server
+module.exports = app;  // ✅ Export `app` (Server yahan start nahi hoga)

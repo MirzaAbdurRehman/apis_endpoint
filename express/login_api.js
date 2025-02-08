@@ -1,6 +1,9 @@
 // index.js
 const express = require('express');
-const app = express();
+
+const app = express.Router();
+
+
 
 const connectDB = require('./db/db_connection');
 connectDB();
@@ -11,7 +14,7 @@ const UserModel = require('./models/user_Signup_model');
 const bcrypt = require('bcryptjs');
 
 // Middleware
-app.use(express.json());  // This middle_ware is used for parisng the json format into javaScript Objects 
+// app.use(express.json());  // This middle_ware is used for parisng the json format into javaScript Objects 
 
 // Login Route
 app.post('/login', async (req, res) => {

@@ -1,6 +1,6 @@
 // index.js
 const express = require('express');
-const app = express();
+const app = express.Router();
 
 const connectDB = require('./db/db_connection');
 connectDB();
@@ -8,8 +8,7 @@ connectDB();
 const UserModel = require('./models/user_Signup_model');
 
 
-// Middleware
-app.use(express.json());   // This middle_ware is used for parisng the json format into javaScript Objects 
+
 
 
 // Signup Route

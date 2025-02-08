@@ -1,12 +1,12 @@
 const express = require('express')
-const app = express();
+const app = express.Router();
 
 const connectDB = require('./db/db_connection');
 connectDB();
 
 const employeeModel = require('./models/employeeModel');
 
-app.use(express.json())   // This middle_ware is used for parisng the json format into javaScript Objects 
+// app.use(express.json())   // This middle_ware is used for parisng the json format into javaScript Objects 
 
 app.patch('/employee/:id', async (req,res) => {  // Use put method when update all the fields of data
     try{
